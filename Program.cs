@@ -6,18 +6,33 @@ class Program
     {
         NumberInput();
         ColourChooser();
+        Add();
 
     }
 
     static void Add()
     {
+        bool correctInput = false;
+        int numTimes = 0;
 
-        Console.WriteLine("How many times do you want to add?");
-        int numTimes = Convert.ToInt32(Console.ReadLine());
-
-        for(i = 0; i > numTimes;)
+        while (correctInput == false)
         {
+            Console.WriteLine("How many times do you want to add?");
+            numTimes = Convert.ToInt32(Console.ReadLine());
 
+            if (numTimes < 1)
+            {
+                Console.WriteLine("Sorry! that's an invalid input. Try again!");
+            }
+            else
+            {
+                correctInput = true;
+            }
+        }
+            
+        for(int i = 1; i > numTimes;)
+        {
+            Console.WriteLine("5");
         }
 
 
@@ -36,7 +51,7 @@ class Program
             if(input == "Yellow" || input == "yellow")
             {
                 Console.Write("Nice work friend! ");
-                Console.Write($"You did this in {numAttempts} attempts!");
+                Console.WriteLine($"You did this in {numAttempts} attempts!");
                 isCorrect = true;
             }
             else
