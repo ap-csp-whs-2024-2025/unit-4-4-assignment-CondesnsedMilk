@@ -6,38 +6,9 @@ class Program
     {
         NumberInput();
         ColourChooser();
-        Add();
+        InputAdd();
 
     }
-
-    static void Add()
-    {
-        bool correctInput = false;
-        int numTimes = 0;
-
-        while (correctInput == false)
-        {
-            Console.WriteLine("How many times do you want to add?");
-            numTimes = Convert.ToInt32(Console.ReadLine());
-
-            if (numTimes < 1)
-            {
-                Console.WriteLine("Sorry! that's an invalid input. Try again!");
-            }
-            else
-            {
-                correctInput = true;
-            }
-        }
-            
-        for(int i = 1; i > numTimes;)
-        {
-            Console.WriteLine("5");
-        }
-
-
-    }
-
     static void ColourChooser()
     {
         bool isCorrect = false;
@@ -64,6 +35,42 @@ class Program
 
 
         }
+
+    }
+
+    static void InputAdd()
+    {
+        bool correctInput = false;
+        int numTimes = 0;
+
+        do
+        {
+            Console.WriteLine("How many times would you like to add?");
+            numTimes = Convert.ToInt32(Console.ReadLine());
+
+            if (numTimes < 1)
+            {
+                Console.WriteLine("Sorry! Wrong amount of times! Try again.");
+            }
+            else
+            {
+                correctInput = true;
+            }
+        }while(correctInput == false);
+            
+        int num = 0;
+        int inputNum = 0;
+
+        for(int i = 1; i < numTimes + 1; i++)
+        {
+            Console.WriteLine($"What's your number {i}?");
+            inputNum = Convert.ToInt32(Console.ReadLine());
+            num = num + inputNum;
+            
+        }
+
+        Console.WriteLine($"Your final number is {num}!");
+
 
     }
 
